@@ -81,7 +81,7 @@
             caseInsensitiveMatch: true
           })
           .when('/coupons', {
-            templateUrl: gsn.getContentUrl('/views/coupons-view.html'),
+            templateUrl: gsn.getThemeUrl('/views/coupons-view.html'),
             storeRequired: true,
             caseInsensitiveMatch: true
           })
