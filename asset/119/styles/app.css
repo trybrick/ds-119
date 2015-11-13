@@ -288,6 +288,7 @@ ul
   color: #ffffff;
   font-weight: bold;
   padding: 10px 8px;
+  float: left;
 }
 
 .navSilver > li > a:hover, .navSilver > li > a:focus,
