@@ -79,6 +79,20 @@ var e = document.getElementsByTagName('script')[0];
       m.parentNode.insertBefore(a, m);
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   </script>
+<script>var clickySiteId = ((globalConfig || {}).data || {}).ClickySiteId;
+var clicky_site_ids = clicky_site_ids || [];
+var clicky_custom = { pageview_disable : 1, history_disable : 1 };
+if (clickySiteId) {
+  clicky_site_ids.push(clickySiteId);
+  (function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//static.getclicky.com/js';
+    ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+  })();
+}
+</script>    
   <div data-bs-display-mode="bsDisplayMode"></div>
   <script>var googleTagId = ((globalConfig || {}).data || {}).GoogleTagId;
   if (googleTagId) {
