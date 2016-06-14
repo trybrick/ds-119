@@ -1,0 +1,102 @@
+<div class="hidden-meta" data-gsn-title="{{ChainName}} | circulars"></div>
+<div class="col-md-12" data-ctrl-circular="" data-ng-init="isListView = (currentPath.indexOf('list') > 0 || currentPath.indexOf('text') > 0)">
+  <div data-ng-show="vm.noCircular">
+    <h3>No circular for this store.</h3>
+  </div>
+  <div class="productImagePopOver hidden" data-ng-non-bindable="">
+    <img data-ng-src="{{item.ImageUrl || getThemeUrl('/images/no_image.jpg')}}" />
+  </div>
+  <div data-gsn-spinner="{radius:30, width:8, length: 16}" data-show-if="vm.digitalCirc == null || vm.noCircular">
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-xs-12">
+      <div class="pull-left" data-ng-include="getThemeUrl('/views/engine/circular-view-type.html')"></div>
+    </div>
+	
+    <div class="col-md-8 col-xs-12 noPadWidth">
+	  <div class="pull-left searchBy-outer">
+		<span class="searchBy">
+			<span>Search By:</span>
+			<div class="searchField btn-group">
+				<input class="searchfield btn btn-default" type="text" placeholder="Enter keyword" data-ng-model="vm.filterBy" name="filterby" />
+			</div>
+		</span>
+	  </div>
+	  <div class="pull-left sortBy-outer">
+      <span>Sort by: </span>
+      <div class="btn-group dropdown">
+        <button style="" type="button" class="btn btn-default btnSilver dropdown-toggle" data-toggle="dropdown">{{sortByName}} <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a href="javascript:void(0)" data-ng-click="toggleSort('PageNumber');sortByName='Page'">Page</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" data-ng-click="toggleSort('CategoryName');sortByName='Department'">Department</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" data-ng-click="toggleSort('BrandName');sortByName='Brand'">Brand</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" data-ng-click="toggleSort('Description');sortByName='Alphabetic'">Alphabetic</a>
+          </li>
+        </ul>
+      </div>
+	  </div>
+    </div>
+    <datalist id="departments">
+      <option value="{{item.key}}" data-bindonce="" data-ng-repeat="item in vm.categories">
+    </datalist>
+    <datalist id="brands">
+      <option value="{{item.key}}" data-bindonce="" data-ng-repeat="item in vm.brands">
+    </datalist>      
+  </div>
+  <div class="col-md-12">
+   <div class="row list">
+    <div data-infinite-scroll="loadMore()">
+		<div data-ng-repeat-start="item in allItems" data-ng-class="{ '': $index == 0 || allItems[$index-1][sortBy] != item[sortBy] }">
+				<div data-ng-if="$index == 0 || allItems[$index-1][sortBy] != item[sortBy]">
+					<h4>{{item[sortBy]}}</h4>
+					<h5>Description</h5>
+				</div>
+			</div>
+		<div class="row items" data-body="">
+			<div class="col-md-2 col-xs-4">
+				<div class="" data-ng-if="currentPath.indexOf('text') < 0">
+					<img data-gsn-popover="" data-selector=".productImagePopOver" data-ng-src="{{item.SmallImageUrl || getThemeUrl('/images/no_image.jpg')}}" />
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-8">
+				<p>
+					{{item.Description}}<br />
+					{{item.ItemDescription}}
+				</p>
+			</div>
+			<div class="col-md-3 col-xs-9">
+				<div class="SalePrice" data-ng-show="item.PriceString">{{item.PriceString}}</div>
+				<div class="savings" data-ng-show="item.Savings">SAVINGS - {{item.SavingsString}}</div>
+			</div>
+			<div class="col-md-1 col-xs-3">
+				<button class="btn btn-default btn-xs btnSilver pull-right" data-ng-click="doToggleCircularItem($event, item)">{{ isOnList(item) && "Remove" || "Add"}}</button>
+			</div>
+		</div>
+		<div class="row" data-ng-repeat-end=""></div>
+			<div>
+				<h5>Disclaimer:</h5>
+				<div class="disclaimer">We reserve the right to limit quantities and correct all printed errors. Prices subject to state and local taxes, if applicable. No sales to dealers. Purchase requirements exclude discounts, coupons, gift cards.</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<style>
+.circularItem img {
+  width: auto;
+}
+
+@media(max-width: 767px){
+  .circularItem img {
+    width: 60%;
+  }
+}
+</style>
