@@ -181,11 +181,11 @@
             caseInsensitiveMatch: true
           })
           .when('/registration', {
-            templateUrl: gsn.getThemeUrl('/views/engine/ProLogic/registration.html'),
+            templateUrl: gsn.getThemeUrl('/views/engine/Prologic/registration.html'),
             caseInsensitiveMatch: true
           })
           .when('/registration/facebook', {
-            templateUrl: gsn.getThemeUrl('/views/engine/ProLogic/registration.html'),
+            templateUrl: gsn.getThemeUrl('/views/engine/Prologic/registration.html'),
             caseInsensitiveMatch: true
           })
           .when('/search', {
