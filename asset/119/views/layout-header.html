@@ -49,13 +49,13 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-nav-bar" style="width: 100%; padding-left: 5px; padding-right: 5px">
-            <ul class="nav navbar-nav nav-hover navbar-right" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" style="margin-left: -15px">
+            <ul class="nav navbar-nav nav-hover navbar-right navSilver" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" style="margin-left: -15px">
                 <li data-ng-repeat="menu in siteMenu | orderBy:'Position'" class="dropdown" dropdown itemprop="name">
                     <a data-ng-href="{{menu.Path}}" data-ng-if="menu.Path != '#'" itemprop="url" target="{{menu.OpenWindow ? '_blank' : ''}}"><span data-ng-bind-html="menu.Name | trustedHtml"></span></a>
                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-ng-if="menu.Path == '#' || menu.Path == ''" itemprop="name">
                         <span data-ng-bind-html="menu.Name | trustedHtml"></span> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-touch" data-ng-if="menu.Path == '#'">
+                    <ul class="dropdown-menu dropdown-menu-touch dropdown-menuSilver" data-ng-if="menu.Path == '#'">
                         <li data-ng-repeat="sm in menu.SubMenu | orderBy:'Position'" itemprop="name">
                             <a data-ng-href="{{sm.Path}}" itemprop="url" target="{{sm.OpenWindow ? '_blank' : ''}}"><span data-ng-bind-html="sm.Name | trustedHtml"></span></a>
                         </li>
