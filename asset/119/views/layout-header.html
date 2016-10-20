@@ -63,11 +63,11 @@
                 </li>
                 <li data-ng-class="{ 'open': gvm.shoppingListActive }" data-ng-if="',visible-xs'.indexOf(bsDisplayMode) <= 0">
                     <a class="btn btn-default list" href="javascript:void(0)" data-ng-click="gvm.shoppingListActive = !gvm.shoppingListActive">
-            My List
-            <span class="badge badgeCount">{{getShoppingListCount()}}</span>
-            <span class="glyphicon glyphicon-chevron-down"></span>
-            <span class="sr-only">Toggle Shopping List</span>
-          </a>
+                    My List
+                    <span class="badge badgeCount">{{getShoppingListCount()}}</span>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    <span class="sr-only">Toggle Shopping List</span>
+                  </a>
                     <ul class="dropdown-menu dropdown-menu-touch" role="menu" style="width: 300px; background: #fff">
                         <li data-ng-if="gvm.shoppingListActive">
                             <div class="shopping-list" data-ng-include="getThemeUrl('/views/engine/shopping-list-plugin.html')"></div>
