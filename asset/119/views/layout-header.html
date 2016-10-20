@@ -63,9 +63,7 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right" data-ng-if="',visible-xs'.indexOf(bsDisplayMode) <= 0">
-                <li data-ng-class="{ 'open': gvm.shoppingListActive }">
+                <li data-ng-class="{ 'open': gvm.shoppingListActive }" data-ng-if="',visible-xs'.indexOf(bsDisplayMode) <= 0">
                     <a class="btn btn-default list" href="javascript:void(0)" data-ng-click="gvm.shoppingListActive = !gvm.shoppingListActive">
             My List
             <span class="badge badgeCount">{{getShoppingListCount()}}</span>
