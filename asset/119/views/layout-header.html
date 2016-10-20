@@ -27,7 +27,7 @@
         </a>
     </div>
     <div class="col-md-8 col-sm-12">
-        <div data-ng-class="{ 'open': gvm.shoppingListActive }">
+        <div class="nav navbar-nav navbar-right" data-ng-class="{ 'open': gvm.shoppingListActive }" style="position: absolute">
             <button type="button" class="btn btn-default btnSilver btnShoppingList" data-ng-click="gvm.shoppingListActive = !gvm.shoppingListActive">
                 My List
                 <span class="badge badgeCount">{{getShoppingListCount()}}</span>
