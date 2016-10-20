@@ -1,4 +1,4 @@
-﻿<div class="row headerBar accountDetails">
+<div class="row headerBar accountDetails">
     <div class="col-md-4 col-sm-4">
         <button class="btn btn-default btnSilver btnLocations" data-gsn-store-info="[store.StoreName] (View All Stores)" data-ng-click="goUrl('/storelocator')">(View All Stores)</button>
     </div>
@@ -35,20 +35,20 @@
         </div>
         <div class="col-md-2 col-sm-2 col-xs-5">
             <div class="nav navSL navbar-nav navbar-navSL navbar-right navbar-rightSL">
-                <div class="btn-group btn-groupList">
+                <div class="btn-group btn-groupList" data-ng-class="{ 'open': gvm.shoppingListActive }">
                     <button type="button" class="btn btn-default btnSilver btnShoppingList" data-ng-click="gvm.shoppingListActive = !gvm.shoppingListActive">
                         My List
                         <span class="badge badgeCount">{{getShoppingListCount()}}</span>
                         <span class="glyphicon glyphicon-chevron-down downArrow"></span>
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menuList" role="menu" data-ng-class="{ 'active': gvm.shoppingListActive }">
+                     <ul class="dropdown-menu dropdown-menu-touch" role="menu" style="width: 300px; background: #fff">
                         <li data-ng-if="gvm.shoppingListActive">
                             <div class="shopping-list" data-ng-include="getThemeUrl('/views/engine/shopping-list-plugin.html')"></div>
                         </li>
-                    </ul>
+</ul>
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
 </div>
