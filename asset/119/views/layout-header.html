@@ -48,7 +48,7 @@
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="main-nav-bar" style="width: 100%; padding-left: 5px; padding-right: 5px">
+        <div class="collapse navbar-collapse" id="main-nav-bar" style="width: 100%;">
             <ul class="nav navbar-nav nav-hover navbar-right navSilver" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" style="margin-left: -15px">
                 <li data-ng-repeat="menu in siteMenu | orderBy:'Position'" class="dropdown" dropdown itemprop="name">
                     <a data-ng-href="{{menu.Path}}" data-ng-if="menu.Path != '#'" itemprop="url" target="{{menu.OpenWindow ? '_blank' : ''}}"><span data-ng-bind-html="menu.Name | trustedHtml"></span></a>
