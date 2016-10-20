@@ -231,13 +231,13 @@ var storeApp = angular
         login: 0,
         store: 0,
         path: '/registration',
-        tpl: gsn.getThemeUrl('/views/engine/registration.html')
+        tpl: gsn.getThemeUrl('/views/engine/prologic/registration.html')
       }
       , {
         login: 0,
         store: 0,
         path: '/registration/facebook',
-        tpl: gsn.getThemeUrl('/views/engine/registration.html')
+        tpl: gsn.getThemeUrl('/views/engine/prologic/registration.html')
       }
       , {
         login: 0,
